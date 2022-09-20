@@ -14,9 +14,12 @@
     "gulp-connect": "^5.7.0",
     "gulp-cssmin": "^0.2.0",
     "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^8.0.0",
+    "gulp-stylus": "^2.7.1",
     "gulp-uglify": "^3.0.2"
   },
   "dependencies": {
+    "gulp-pug": "^5.0.0",
     "gulp-sourcemaps": "^3.0.0",
     "jquery": "^3.6.1",
     "jquery-validation": "^1.19.5"

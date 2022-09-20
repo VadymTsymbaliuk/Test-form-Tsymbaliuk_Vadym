@@ -1,0 +1,148 @@
+@font-face
+  font-family "Graphik"
+  src local("../fonts/GraphokBold.otf")
+  font-weight 600
+
+@font-face
+  font-family "OpenSans"
+  src url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap")
+
+*
+  box-sizing border-box
+  margin 0
+  padding 0
+
+html
+body
+  font-family "OpenSans", sans-serif
+  font-size 16px
+
+.container
+  height 100vh
+  padding-top 77px
+  display flex
+  flex-direction column
+  align-items center
+  background-color #f7f8fb
+
+.logo-container
+  margin-bottom 59px
+
+.form-container
+  display flex
+  flex-direction column
+  max-width 576px
+  height 628px
+  padding 60px 64px
+  gap 28px
+  background-color #fff
+  border-radius 12px
+  box-shadow 0px 8px 40px rgba(0, 0, 0, 0.1)
+
+.form-container__title
+  text-align center
+  font-family "Graphik", serif
+  font-size 32px
+  margin-bottom 12px
+
+.button-container
+  display flex
+  justify-content center
+  align-items center
+  gap 12px
+
+.button-container__item
+  position relative
+  padding 8px 28px
+  border 1px solid #c7ced3
+  border-radius 4px
+
+.button-container__item_facebook:before,
+.button-container__item_google:before,
+.button-container__item_apple:before
+  position absolute
+  content ""
+  width 24px
+  height 24px
+  top 0px
+  left 0
+  background-repeat no-repeat
+  background-size contain
+  background-position center center
+
+.button-container__item_facebook
+  &:before
+    background-image url("../img/Facebook-login.svg")
+
+.button-container__item_google
+  &:before
+    background-image url("../img/Google-login.svg")
+
+.button-container__item_apple
+  &:before
+    background-image url("../img/Apple-login.svg")
+
+.divider-container
+  width 100%
+
+.divider-container__divider
+  display block
+  width 100%
+  position relative
+  text-align center
+  font-size 14px
+  color #546470
+  &:before
+    left 0
+  &:after
+    right 0
+
+.divider-container__divider:before,
+.divider-container__divider:after
+  content ""
+  position absolute
+  top 50%
+  height 1px
+  width 148px
+  background-color rgba(216, 224, 230, 1)
+
+.form
+  display flex
+  flex-direction column
+  gap 28px
+
+.form-group
+  display flex
+  flex-direction column
+  gap 16px
+
+.form-group__input
+  border 1px solid #81919d
+  border-radius 4px
+  padding 12px
+
+.form-group__submit-input
+  color #fff
+  font-weight 700
+  background-color #0777CF
+  border-radius 4px
+  padding 12px
+
+.form-group__submit-span
+  position relative
+  text-align center
+  font-size 12px
+  color #546470
+
+.additional-container
+  display flex
+  flex-direction column
+  gap 12px
+
+.additional-container__login
+  text-align center
+
+.additional-container__agree-policy
+  text-align center
+  font-size 12px
+  color #667988
