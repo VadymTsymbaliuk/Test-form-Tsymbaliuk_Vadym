@@ -10,33 +10,35 @@ html(lang='en')
             .container
                 .logo-container
                     img(src='./img/logo.svg', alt='logo')
-                .form-container
-                    h1.form-container__title Sign up for a free trial
-                    .button-container
-                        a.button-container__item.button-container__item_facebook(href='#') Facebook
-                        a.button-container__item.button-container__item_google(href='#') Google
-                        a.button-container__item.button-container__item_apple(href='#') Apple
-                    .divider-container
-                        span.divider-container__divider or sign up using e-mail
-                    form.form(action='')
-                        .form-group
-                            input.form-group__input(type='text', placeholder='email@example.com')
-                            input.form-group__input(type='password', placeholder='Enter password')
-                        .form-group
-                            input.form-group__submit-input(type='submit', value='Start your free trial')
-                            span.form-group__submit-span &#x1F389; No credit card required
-                    .additional-container
+                .form-login
+                    h1.form-login__title Sign up for a free trial
+                    .social-button
+                        a.social-button__item.social-button__item_facebook(href='#') Facebook
+                        a.social-button__item.social-button__item_google(href='#') Google
+                        a.social-button__item.social-button__item_apple(href='#') Apple
+                    .form-login__divider
+                        span.form-login__divider-text or sign up using e-mail
+                    form.form(action='#')
+                        .form__form-row
+                            input.form-row__input.form-row__input-email(id="email" type='email' name="email" placeholder='email@example.com')
+                            input.form-row__input.form-row__input-password(id="password" type='password' name="password" placeholder='Enter password')
+                        .form__form-row.form__form-row_info
+                            input.form-row__submit-input(type='submit', value='Start your free trial')
+                            span.form-row__submit-span &#x1F389; No credit card required
+                    .form-login__additional-info
                         span.additional-container__login
                             | Already have an account?
                             a(href='#') Login
                             |  or
-                            a(href='#') Login with SSO
+                            a(href='#')  Login with SSO
                         p.additional-container__agree-policy
                             | By proceeding to create your account, you agree to
                             | signNow&apos;s
                             a(href='#') Privacy Policy
                             |  and
-                            a(href='#') Terms of Service
+                            a(href='#')  Terms of Service
                             |  and opt
-                            to receive marketing communications
+                            | to receive marketing communications
+            .container
+                ul.exchange-list
         script(src='./js/script.js')

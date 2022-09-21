@@ -1,10 +1,10 @@
 const {src, dest, series, watch, parallel} = require("gulp");
-const uglify = require("gulp-uglify");
+// const uglify = require("gulp-uglify");
 const sourcemaps = require("gulp-sourcemaps");
 const concat = require("gulp-concat");
 const connect = require("gulp-connect");
 const stylus = require("gulp-stylus");
-const cssmin = require("gulp-cssmin");
+// const cssmin = require("gulp-cssmin");
 const pug = require("gulp-pug");
 
 
@@ -31,7 +31,7 @@ const destPath = {
 const jsPath = [
     "./node_modules/jquery/dist/jquery.min.js",
     "./node_modules/jquery-validation/dist/jquery.validate.min.js",
-    "./node_modules/jquery-validation/dist/jquery.validate.min.js",
+    "./app/js/exchangeRate.js",
     "./app/js/script.js"
 ];
 
@@ -67,7 +67,7 @@ function jsMin() {
     return src(jsPath)
         .pipe(sourcemaps.init())
         .pipe(concat('script.js'))
-        .pipe(uglify())
+        // .pipe(uglify())
         .pipe(sourcemaps.write())
         .pipe(dest(destPath.js))
         .pipe(connect.reload());

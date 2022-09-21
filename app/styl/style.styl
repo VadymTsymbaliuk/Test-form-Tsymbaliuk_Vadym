@@ -18,8 +18,9 @@ body
   font-size 16px
 
 .container
-  height 100vh
+  height inherit
   padding-top 77px
+  padding-bottom: 30px
   display flex
   flex-direction column
   align-items center
@@ -28,7 +29,7 @@ body
 .logo-container
   margin-bottom 59px
 
-.form-container
+.form-login
   display flex
   flex-direction column
   max-width 576px
@@ -39,53 +40,79 @@ body
   border-radius 12px
   box-shadow 0px 8px 40px rgba(0, 0, 0, 0.1)
 
-.form-container__title
+@media screen and (max-width: 600px)
+  .form-login
+    height 828px
+
+.form-login__title
   text-align center
-  font-family "Graphik", serif
+  font-family "Graphik", sans-serif
   font-size 32px
-  margin-bottom 12px
+  font-weight 700
+  line-height 30px
+  margin-bottom 13px
 
-.button-container
-  display flex
-  justify-content center
-  align-items center
-  gap 12px
+.social-button
+  display grid
+  grid-template-columns 34% 31% 28%
+  gap 15px
 
-.button-container__item
+.social-button__item
   position relative
   padding 8px 28px
   border 1px solid #c7ced3
   border-radius 4px
+  font-size 14px
+  line-height 24px
+  text-align end
+  text-decoration none
+  color #414141
+  cursor pointer
+  &:hover
+    background-color: #cbcbcb
+    color #5d5d5d
 
-.button-container__item_facebook:before,
-.button-container__item_google:before,
-.button-container__item_apple:before
+.social-button__item_facebook:before,
+.social-button__item_google:before,
+.social-button__item_apple:before
   position absolute
   content ""
   width 24px
   height 24px
-  top 0px
-  left 0
+  top 50%
+  left 28px
+  transform translateY(-50%)
   background-repeat no-repeat
-  background-size contain
+  background-size inherit
   background-position center center
 
-.button-container__item_facebook
+.social-button__item_facebook
   &:before
     background-image url("../img/Facebook-login.svg")
 
-.button-container__item_google
+.social-button__item_google
   &:before
     background-image url("../img/Google-login.svg")
 
-.button-container__item_apple
+.social-button__item_apple
   &:before
     background-image url("../img/Apple-login.svg")
 
-.divider-container
-  width 100%
 
-.divider-container__divider
+
+@media screen and (max-width: 600px)
+  .social-button
+    grid-template-columns 100%
+
+  .social-button__item
+    text-align center
+
+
+.form-login__divider
+  width 100%
+  padding-top: 3px
+
+.form-login__divider-text
   display block
   width 100%
   position relative
@@ -97,47 +124,63 @@ body
   &:after
     right 0
 
-.divider-container__divider:before,
-.divider-container__divider:after
+.form-container__divider-text:before,
+.form-container__divider-text:after
   content ""
   position absolute
   top 50%
   height 1px
-  width 148px
+  width calc(50% - 86px)
   background-color rgba(216, 224, 230, 1)
 
 .form
   display flex
   flex-direction column
   gap 28px
+  padding-top: 4px
 
-.form-group
+.form__form-row
   display flex
   flex-direction column
   gap 16px
 
-.form-group__input
+.form__form-row_info
+  gap 8px
+
+.form-row__input
+  height: 48px
   border 1px solid #81919d
   border-radius 4px
   padding 12px
 
-.form-group__submit-input
+.form-row__submit-input
+  height 48px
+  font-size 18px
   color #fff
   font-weight 700
   background-color #0777CF
   border-radius 4px
   padding 12px
+  border: 1px solid transparent
+  cursor: pointer
+  &:hover
+    background-color #0666b0
+    border 1px solid #113b5e
+  &:active
+    color #c7c7c7
+    background-color #06599a
 
-.form-group__submit-span
+
+.form-row__submit-span
   position relative
   text-align center
   font-size 12px
   color #546470
 
-.additional-container
+.form-login__additional-info
   display flex
   flex-direction column
-  gap 12px
+  gap 16px
 
 .additional-container__login
   text-align center
@@ -146,3 +189,25 @@ body
   text-align center
   font-size 12px
   color #667988
+
+
+  /*error data in form*/
+.input-error
+  font-size 12px
+  color #546470
+  border: 1px solid red
+  border-radius 4px
+  padding: 5px
+  margin-top: 5px
+
+/*exchenge list*/
+.exchange-list
+  display flex
+  flex-direction column
+  gap 12px
+  list-style none
+
+.exchange-list__item
+  padding: 10px
+  border 1px solid #81919d
+  border-radius 4px
