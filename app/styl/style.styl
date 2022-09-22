@@ -1,11 +1,7 @@
 @font-face
   font-family "Graphik"
-  src local("../fonts/GraphokBold.otf")
+  src local("../fonts/GraphikBold.otf")
   font-weight 600
-
-@font-face
-  font-family "OpenSans"
-  src url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap")
 
 *
   box-sizing border-box
@@ -14,7 +10,7 @@
 
 html
 body
-  font-family "OpenSans", sans-serif
+  font-family 'Open Sans'
   font-size 16px
 
 .container
@@ -25,19 +21,20 @@ body
   flex-direction column
   align-items center
   background-color #f7f8fb
+
 @media screen and (max-width: 600px)
   .container
-    padding 0 10px 30px 10px
+    padding 10px 10px 30px 10px
 
 .logo-container
-  margin-bottom 59px
+  margin-bottom 55px
 
 .form-login
   display flex
   flex-direction column
   max-width 576px
   height 628px
-  padding 60px 64px
+  padding 60px 64px 60px 64px
   gap 28px
   background-color #fff
   border-radius 12px
@@ -45,19 +42,20 @@ body
 
 @media screen and (max-width: 600px)
   .form-login
-    height 828px
+    height inherit
+    padding 12px 16px 12px 16px
 
 .form-login__title
   text-align center
   font-family "Graphik", sans-serif
   font-size 32px
   font-weight 700
-  line-height 30px
-  margin-bottom 13px
+  line-height 40px
 
 .social-button
   display grid
   grid-template-columns 34% 31% 28%
+  padding-top: 7px
   gap 15px
 
 .social-button__item
@@ -71,9 +69,13 @@ body
   text-decoration none
   color #414141
   cursor pointer
+
   &:hover
-    background-color: #cbcbcb
-    color #5d5d5d
+    border: 1px solid #0777CF
+
+  &:focus
+    outline #0777CF
+    box-shadow: 0px 0px 0px 1px #FFFFFF, 0px 0px 0px 3px #667988
 
 .social-button__item_facebook:before,
 .social-button__item_google:before,
@@ -102,30 +104,30 @@ body
     background-image url("../img/Apple-login.svg")
 
 
-
 @media screen and (max-width: 600px)
   .social-button
     grid-template-columns 100%
 
-  .social-button__item
-    text-align center
+    &__item
+      text-align center
 
 
 .form-login__divider
   width 100%
-  padding-top: 3px
 
-.form-login__divider-text
-  display block
-  width 100%
-  position relative
-  text-align center
-  font-size 14px
-  color #546470
-  &:before
-    left 0
-  &:after
-    right 0
+  &-text
+    display block
+    width 100%
+    position relative
+    text-align center
+    font-size 14px
+    color #546470
+
+    &:before
+      left 0
+
+    &:after
+      right 0
 
 .form-login__divider-text:before,
 .form-login__divider-text:after
@@ -139,70 +141,117 @@ body
 .form
   display flex
   flex-direction column
-  gap 28px
+  gap 16px
   padding-top: 4px
 
-.form__form-row
-  display flex
-  flex-direction column
-  gap 16px
+  &__form-row
+    display flex
+    flex-direction column
+    gap 4px
 
-.form__form-row_info
-  gap 8px
+  &__form-row_info
+    margin-top: 12px
+    gap 4px
 
-.form-row__input
-  height: 48px
-  border 1px solid #81919d
+  &__input
+    height: 48px
+    border 1px solid #81919d
+    border-radius 4px
+    padding 12px
+    font-size: 16px
+    line-height: 24px
+    color #667988
+
+    &:hover
+      border 1px solid #738592
+
+    &:focus
+      border: 1px solid #738592
+      box-shadow: 0px 0px 0px 1px #FFFFFF, 0px 0px 0px 3px #667988
+
+    &:focus-visible
+      outline #738592
+
+  &__submit-input
+    height 48px
+    color #fff
+    font-size: 16px;
+    line-height: 24px;
+    font-weight 700
+    background-color #0777CF
+    border-radius 4px
+    padding 12px
+    border: 1px solid transparent
+    cursor: pointer
+
+    &:hover
+      background-color #348FD7
+      border 1px solid #348FD7
+
+    &:focus
+      background-color #06599a
+      box-shadow 0px 0px 0px 1px #FFFFFF, 0px 0px 0px 3px #667988
+
+
+  &__submit-span
+    position relative
+    text-align center
+    font-size 12px
+    color #546470
+    margin-top: 1px
+
+/*error data in form*/
+
+.form__input.input-error
   border-radius 4px
-  padding 12px
+  border 1px solid #D73F3E
 
-.form-row__submit-input
-  height 48px
-  font-size 18px
-  color #fff
-  font-weight 700
-  background-color #0777CF
-  border-radius 4px
-  padding 12px
-  border: 1px solid transparent
-  cursor: pointer
-  &:hover
-    background-color #0666b0
-    border 1px solid #113b5e
-  &:active
-    color #c7c7c7
-    background-color #06599a
-
-
-.form-row__submit-span
-  position relative
-  text-align center
+.input-error
   font-size 12px
-  color #546470
+  line-height 16px
+  color #D73F3E
+
 
 .form-login__additional-info
   display flex
   flex-direction column
+  padding-top: 2px
   gap 16px
 
-.additional-container__login
+.additional-login
   text-align center
 
-.additional-container__agree-policy
+  &__link
+    color: #0777CF
+
+    &:visited
+      color #667988
+
+      &:hover
+        color: #348FD7
+
+    &:hover
+      color #348FD7
+
+
+.additional-agree-policy
   text-align center
   font-size 12px
   line-height 17px
   color #667988
 
+  &__link
+    color: #667988
 
-  /*error data in form*/
-.input-error
-  font-size 12px
-  color #546470
-  border: 1px solid red
-  border-radius 4px
-  padding: 5px
-  margin-top: 5px
+    &:visited
+      color #667988
+
+      &:hover
+        color #348FD7
+
+    &:hover
+      color #348FD7
+
 
 /*exchenge list*/
 .exchange-list

@@ -3,7 +3,11 @@ html(lang='en')
     head
         meta(charset='UTF-8')
         meta(name='viewport', content='width=device-width, initial-scale=1.0')
-        title Title
+        title SignNow
+        link(rel="icon" type="image/png" href="https://marketing-static.signnow.com/1018/favicons/apple-touch-icon.png")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet")
         link(rel='stylesheet', href='./css/style.css')
     body
         main
@@ -20,24 +24,32 @@ html(lang='en')
                         span.form-login__divider-text or sign up using e-mail
                     form.form(action='#')
                         .form__form-row
-                            input.form-row__input.form-row__input-email(id="email" type='email' name="email" placeholder='email@example.com')
-                            input.form-row__input.form-row__input-password(id="password" type='password' name="password" placeholder='Enter password')
+                            input.form__input.form__input-email(id="email" type='email' name="email" placeholder='email@example.com')
+                        .form__form-row
+                            input.form__input.form__input-password(id="password" type='password' name="password" placeholder='Enter password')
                         .form__form-row.form__form-row_info
-                            input.form-row__submit-input(type='submit', value='Start your free trial')
-                            span.form-row__submit-span &#x1F389; No credit card required
+                            input.form__submit-input(type='submit', value='Start your free trial')
+                            span.form__submit-span &#x1F389; No credit card required
                     .form-login__additional-info
-                        span.additional-container__login
+                        span.additional-login
                             | Already have an account?
-                            a(href='#') Login
-                            |  or
-                            a(href='#')  Login with SSO
-                        p.additional-container__agree-policy
+                            |
+                            a.additional-login__link(href='#') Login
+                            |
+                            | or
+                            |
+                            a.additional-login__link(href='#')  Login with SSO
+                        p.additional-agree-policy
                             | By proceeding to create your account, you agree to
                             | signNow&apos;s
-                            a(href='#') Privacy Policy
+                            |
+                            a.additional-agree-policy__link(href='#') Privacy Policy
+                            |
                             |  and
-                            a(href='#')  Terms of Service
-                            |  and opt
+                            |
+                            a.additional-agree-policy__link(href='#') Terms of Service
+                            |
+                            | and opt
                             | to receive marketing communications
             .container
                 ul.exchange-list
